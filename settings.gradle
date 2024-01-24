@@ -1,1 +1,21 @@
+
+pluginManagement {
+    plugins {
+        id 'org.springframework.boot' version "${springBootVersion}"
+        id 'io.spring.dependency-management' version "${springDependencyManagementVersion}"
+        id 'org.asciidoctor.jvm.convert' version "${asciidoctorConvertVersion}"
+        id 'io.spring.javaformat' version "${springJavaFormatVersion}"
+    }
+}
+
 rootProject.name = 'jong1'
+include (
+        ':core',
+        ':core:core-enum',
+        ':core:core-api'
+)
+include 'storage:db-core'
+include 'tests:api-docs'
+include 'support:logging'
+include 'support:monitoring'
+include 'clients:client-example'
