@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 class CoreDataSourceConfig {
 
-    @Bean
+    @Bean(name = "coreHikariConfig")
     @ConfigurationProperties(prefix = "storage.datasource.core")
     public HikariConfig coreHikariConfig() {
         return new HikariConfig();
