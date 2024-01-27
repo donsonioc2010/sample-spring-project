@@ -21,6 +21,10 @@ server:
     threads:
       max: 600
       min-spare: 100
+    accesslog:
+      ipv6-canonical: false
+  port: 8080
+  shutdown: graceful
 
 ---
 spring.config.activate.on-profile: local
