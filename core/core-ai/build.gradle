@@ -1,0 +1,16 @@
+dependencies {
+    implementation project(":core:core-enum")
+    implementation project(":support:monitoring")
+    implementation project(":support:logging")
+    implementation project(":storage:db-core")
+
+    // Spring ai
+//    implementation platform("org.springframework.ai:spring-ai-bom:1.0.0-SNAPSHOT")
+
+    // 두개는 모두 BOM에 존재함.
+//    implementation 'org.springframework.ai:spring-ai-openai'
+//    implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
+
+    // Validation
+    api 'org.springframework.boot:spring-boot-starter-validation'
+}

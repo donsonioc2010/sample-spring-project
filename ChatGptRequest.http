@@ -1,0 +1,15 @@
+### GET request to example server
+POST http://127.0.0.1:8080/ai/generate
+Content-Type: application/json
+
+{
+  "message": "오늘 대한민국의 날씨가 어떨것 같아?"
+}
+
+###
+POST http://127.0.0.1:8080/ai/generateStream
+Content-Type: application/json
+
+{
+  "message": "오늘 대한민국의 날씨가 어떨것 같아?"
+}

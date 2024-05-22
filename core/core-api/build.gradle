@@ -3,6 +3,7 @@ jar.enabled = false
 
 dependencies {
     implementation project(":core:core-enum")
+    implementation project(":core:core-ai")
     implementation project(":support:monitoring")
     implementation project(":support:logging")
     implementation project(":storage:db-core")
@@ -12,6 +13,10 @@ dependencies {
     
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+
+    implementation platform("org.springframework.ai:spring-ai-bom:1.0.0-SNAPSHOT")
+    implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
 
     // Validation
     implementation 'org.springframework.boot:spring-boot-starter-validation'

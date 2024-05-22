@@ -13,7 +13,8 @@ rootProject.name = 'jong1'
 include (
         ':core',
         ':core:core-enum',
-        ':core:core-api'
+        ':core:core-api',
+        ':core:core-ai'
 )
 include 'storage:db-core'
 include 'tests:api-docs'

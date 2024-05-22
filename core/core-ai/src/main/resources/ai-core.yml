@@ -1,0 +1,41 @@
+spring:
+  ai:
+    retry:
+      #최대 재시도 횟수, Default가 10이다.
+      max-attempts: 10
+
+      # false인 경우 NonTransientAiException을 발생시키고 4xx클라이언트 오류 코드 에 대해 재시도를 시도하지 않습니다.
+      on-client-errors: false
+      # 오류코드에 대해서 특정 코드는 재시도를 해야하는 오류코드, List를 받는다
+      #      exclude-on-http-codes:
+
+      backoff:
+        # 최초 초기화를 하는 동안 정책의 초기화 타임?
+        # 받는 타입이 Duration 이며, Default는 2초
+        initial-interval: 2s
+
+        # Backoff interval시 멀티플러?? 용도를 모르겠다...
+        multiplier: 5
+
+        # 최대 간격시간?, 타입은 Duration, Default는 3분
+        max-interval: 3m
+
+    openai:
+      # ChatGpt API주소, Default는 openai링크가 바로 잡혀있다.
+#      base-url: https://api.openai.com
+      # 발급받은 AI API KEY
+      api-key: ${chatgpt-key}
+
+      chat:
+        # OpenAI 채팅 클라이언트를 활성화합니다, Default = True
+        enabled: true
+        # openai.base-url 을 재정의하여 채팅 관련 관련 URL의 변경이 가능
+        #base-url:
+        # openai.api-key를 재정의하여 채팅관련시만 사용하는 API KEY의 변경이 가능
+        api-key: ${chatgpt-key}
+        options:
+          # OpenAi Chat시 사용할 모델지정, ChatGpt의 Docs에서 모델명은 참조
+#          model: gpt-4o
+#          model: GPT-4 Turbo and GPT-4
+#          model: gpt-4-32k
+          model: gpt-3.5-turbo
