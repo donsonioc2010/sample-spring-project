@@ -1,12 +1,13 @@
-package com.example.jong1.core.enums.common;
+package com.example.jong1.core.enums.payments;
 
-
+import com.example.jong1.core.enums.common.EnumMapperType;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public enum DataStatus implements EnumMapperType {
-    USE("사용"),
-    DEL("삭제");
+public enum CommissionCutting implements EnumMapperType {
+    ROUND("반올림"),
+    CEIL("올림"),
+    FLOOR("버림");
 
     private final String value;
 
