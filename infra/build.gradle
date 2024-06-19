@@ -1,0 +1,10 @@
+dependencies {
+    api project(':core:core-enum')
+
+    api('com.fasterxml.jackson.datatype:jackson-datatype-jdk8')
+    api('com.fasterxml.jackson.datatype:jackson-datatype-jsr310')
+    api 'org.seleniumhq.selenium:selenium-java:4.21.0'
+
+    // Validation
+    api 'org.springframework.boot:spring-boot-starter-validation'
+}

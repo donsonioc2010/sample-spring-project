@@ -16,6 +16,7 @@ include (
         ':core:core-api',
         ':core:core-ai'
 )
+include 'infra'
 include 'storage:db-core'
 include 'tests:api-docs'
 include 'support:logging'

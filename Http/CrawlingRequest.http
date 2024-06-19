@@ -1,0 +1,3 @@
+### GET request to example server
+GET http://127.0.0.1:8080/craw/namu/ky
+Content-Type: application/json

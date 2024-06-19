@@ -36,6 +36,8 @@ spring.config.activate.on-profile: local-dev
 
 spring:
   jpa:
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
         show_log: true
@@ -45,8 +47,9 @@ spring:
 storage:
   datasource:
     core:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://${storage.database.core-db.url}
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://${storage.database.core-db.url}
       username: ${storage.database.core-db.username}
       password: ${storage.database.core-db.password}
       maximum-pool-size: 5
@@ -74,8 +77,9 @@ spring.config.activate.on-profile: dev
 storage:
   datasource:
     core:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://${storage.database.core-db.url}
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://${storage.database.core-db.url}
       username: ${storage.database.core-db.username}
       password: ${storage.database.core-db.password}
       maximum-pool-size: 5
@@ -103,8 +107,9 @@ spring.config.activate.on-profile: staging
 storage:
   datasource:
     core:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://${storage.database.core-db.url}
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://${storage.database.core-db.url}
       username: ${storage.database.core-db.username}
       password: ${storage.database.core-db.password}
       maximum-pool-size: 5
@@ -132,8 +137,9 @@ spring.config.activate.on-profile: live
 storage:
   datasource:
     core:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://${storage.database.core-db.url}
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://${storage.database.core-db.url}
       username: ${storage.database.core-db.username}
       password: ${storage.database.core-db.password}
       maximum-pool-size: 25

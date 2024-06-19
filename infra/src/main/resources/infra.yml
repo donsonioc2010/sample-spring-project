@@ -1,0 +1,25 @@
+
+
+---
+spring.config.activate.on-profile: local
+chrome:
+  driver:
+    path: /Users/jong/Util/chromedriver/chromedriver-mac-arm64/chromedriver
+
+---
+spring.config.activate.on-profile: local-dev
+chrome:
+  driver:
+        path: /Users/jong/Util/chromedriver/chromedriver-mac-arm64/chromedriver
+
+---
+spring.config.activate.on-profile: dev
+
+
+---
+spring.config.activate.on-profile: staging
+
+
+---
+spring.config.activate.on-profile: live
+

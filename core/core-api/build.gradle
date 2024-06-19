@@ -8,6 +8,7 @@ dependencies {
     implementation project(":support:logging")
     implementation project(":storage:db-core")
     implementation project(":clients:client-example")
+    implementation project(":infra")
 
     testImplementation project(":tests:api-docs")
     
