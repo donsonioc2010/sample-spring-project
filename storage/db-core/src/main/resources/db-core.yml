@@ -40,9 +40,9 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        show_log: true
+        show_log: false
         format_sql: true
-    show-sql: true
+    show-sql: false
 
 storage:
   datasource:

@@ -11,7 +11,7 @@ public class CrawlingCommonOptions {
 
     public static ChromeOptions ofCommonChromeOptions() {
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless"); // 브라우저를 켜지 않고 크롤링
+        options.addArguments("--headless"); // 브라우저를 켜지 않고 크롤링
 //        options.setCapability("browserVersion", "126.0.6478.62");
         options.addArguments("--remote-allow-origins=*");
 

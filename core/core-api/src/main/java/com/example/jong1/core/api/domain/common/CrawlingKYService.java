@@ -1,10 +1,10 @@
 package com.example.jong1.core.api.domain.common;
 
 
-import com.example.jong1.infra.craw.NamuWikiCraw;
+import com.example.jong1.infra.craw.NamuWikiKYCraw;
 import com.example.jong1.infra.song.SongResponse;
-import com.example.jong1.storage.db.core.song.entity.SongEntity;
-import com.example.jong1.storage.db.core.song.repository.SongRepository;
+import com.example.jong1.storage.db.core.song.entity.SongNamuEntity;
+import com.example.jong1.storage.db.core.song.repository.SongNamuRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,8 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class CrawlingKYService {
-    private final SongRepository songRepository;
-    private final NamuWikiCraw namuWikiCraw;
+    private final SongNamuRepository songNamuRepository;
+    private final NamuWikiKYCraw namuWikiKYCraw;
 
 
     // URL 입력받게 할 수 있는데, 그냥 직접 올려주는걸 택함. 많이 요청하면 밴때리니까...
@@ -43,14 +43,14 @@ public class CrawlingKYService {
     }
 
     private List<SongResponse> crawlingKySong() {
-        return namuWikiCraw.process(url);
+        return namuWikiKYCraw.process(url);
     }
 
     private void uploadKySong(List<SongResponse> songDataList) {
-        songRepository.saveAll(
+        songNamuRepository.saveAll(
             songDataList
                 .stream()
-                .map(song -> SongEntity.ofMachineTypeKY(
+                .map(song -> SongNamuEntity.ofMachineTypeKY(
                     song.title(),
                     song.artist(),
                     song.number(),

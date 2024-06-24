@@ -8,12 +8,14 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "TBL_SONG")
+@Table(name = "TBL_SONG_NAMU")
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class SongEntity extends BaseEntity {
+public class SongNamuEntity extends BaseEntity {
 
     @Column(nullable = false)
     private String title;
@@ -31,7 +33,7 @@ public class SongEntity extends BaseEntity {
     private String releaseMonth;
 
     @Builder
-    private SongEntity(String title, String artist, String songCode, MachineType machineType,
+    private SongNamuEntity(String title, String artist, String songCode, MachineType machineType,
         String releaseMonth) {
         this.title = title;
         this.artist = artist;
@@ -44,13 +46,21 @@ public class SongEntity extends BaseEntity {
         TJ, KY
     }
 
-    public static SongEntity ofMachineTypeKY(String title, String artist, String songCode, String releaseMonth) {
-        return SongEntity.builder()
+    private static SongNamuEntity of(String title, String artist, String songCode, String releaseMonth, MachineType machineType) {
+        return SongNamuEntity.builder()
             .title(title)
             .artist(artist)
             .songCode(songCode)
             .releaseMonth(releaseMonth)
-            .machineType(MachineType.KY)
+            .machineType(machineType)
             .build();
+    }
+
+    public static SongNamuEntity ofMachineTypeKY(String title, String artist, String songCode, String releaseMonth) {
+        return of(title, artist, songCode, releaseMonth, MachineType.KY);
+    }
+
+    public static SongNamuEntity ofMachineTypeTJ(String title, String artist, String songCode, String releaseMonth) {
+        return of(title, artist, songCode, releaseMonth, MachineType.TJ);
     }
 }
